@@ -1,0 +1,23 @@
+extends ../application.pug
+
+block content
+  .container
+    .row
+      .col-xs-3
+        img(class="img-fluid" src=user.avatar_url)
+      .col-xs-9
+        h1= user.name
+        h5= user.login
+
+        if user.email
+          h5= "Email: " + user.email
+        if user.company
+          h4= "Company: " + user.company
+
+        if user.location
+          h4= "Location: " + user.location
+        else
+          h4 Location unknown
+
+        if user.blog
+          a(href=user.blog)= "Website: " + user.blog
